@@ -17,6 +17,7 @@
   </p>
 
   <p>
+    <%= form.label :course %><br>
     <%= form.select(:course_id, options_from_collection_for_select(Course.all, :id, :name)) %>
   </p>
 

@@ -1,2 +1,12 @@
-<h1>Masters#index</h1>
-<p>Find me in app/views/masters/index.html.erb</p>
+<h1>Listing masters</h1>
+ 
+<ul>
+  <% @masters.each do |master| %>
+      <li><%= master.first_name %></li>
+      <li><%= master.last_name %></li>
+      <li><%= master.age %></li>
+      <li><%= master.salary %></li>
+      <li><%= master.education %></li>
+      <li><%= link_to 'Show', master_path(master) %></li>
+  <% end %>
+</ul>
