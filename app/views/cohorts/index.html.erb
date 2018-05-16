@@ -1,0 +1,18 @@
+<h1>Listing cohorts</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @acohorts.each do |cohort| %>
+    <tr>
+      <td><%= cohort.title %></td>
+      <td><%= cohort.start_date %></td>
+      <td><%= cohort.end_date %></td>
+      <td><%= link_to 'Show', cohort_path(cohort) %></td>
+    </tr>
+  <% end %>
+</table>

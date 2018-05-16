@@ -2,8 +2,9 @@ class CreateCohorts < ActiveRecord::Migration[5.2]
   def change
     create_table :cohorts do |t|
       t.string :name
-      t.datetime :start_date
-      t.datetime :end_date
+      t.date :start_date
+      t.date :end_date
+      t.references :course
 
       t.timestamps
     end

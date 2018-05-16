@@ -14,10 +14,12 @@ ActiveRecord::Schema.define(version: 2018_05_13_174914) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_cohorts_on_course_id"
   end
 
   create_table "cohorts_masters", id: false, force: :cascade do |t|

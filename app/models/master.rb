@@ -1,3 +1,3 @@
 class Master < ApplicationRecord
-    hhas_many :courses, through: :cohorts
+    has_many :courses, through: :cohorts
 end
