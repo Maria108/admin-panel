@@ -63,3 +63,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2018-05-18 17:24:27 -0400 by mariaabashina:
 gem "devise", "~> 4.4"
+
+gem 'bootstrap', '~> 4.1.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'font-awesome-rails'
+
+gem 'jquery-rails'
+
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/bootstrap_form.git",
+    branch: "master"
+
