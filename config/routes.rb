@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :masters
   resources :courses
   resources :cohorts
+  resources :admins
 
   get 'welcome/index'
   root to: 'welcome#index'
