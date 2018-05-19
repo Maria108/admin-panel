@@ -1,8 +1,7 @@
-<%= bootstrap_form_for @master do |form| %>
+<%= bootstrap_form_for @student do |form| %>
   <%= form.text_field :first_name %>
   <%= form.text_field :last_name %>
   <%= form.number_field :age %>
-  <%= form.number_field :salary %>
   <%= form.text_field :education %><br>
   <%= form.fields_for :user do |u| %>
     <%= u.email_field :email, placeholder: "Enter Email", label: "Email address", help: "We'll never share your email with anyone else" %>
