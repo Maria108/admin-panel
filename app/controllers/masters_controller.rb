@@ -1,9 +1,13 @@
 class MastersController < ApplicationController
+  before_action :set_master, only: [:show, :edit, :update, :destroy]
+
   def index
     @masters = Master.all
   end
 
   def new
+    @master = Master.new
+    @master.build_user
   end
 
   def create
@@ -13,12 +17,15 @@ class MastersController < ApplicationController
   end
 
   def update
+    @master.update(master_params)
   end
 
   def edit
+    @master
   end
 
   def destroy
+    @master.destroy
   end
 
   def show
@@ -26,7 +33,21 @@ class MastersController < ApplicationController
   end
 
   private
+  def set_master
+    @master = Master.find(params[:id])
+  end
+
   def master_params
-    params.require(:master).permit(:first_name, :last_name, :age, :slary, :education)
+    params.require(:master).permit(
+      :first_name,
+      :last_name,
+      :age,
+      :salary,
+      :education,
+      :user_attributes => [
+        :email,
+        :password
+      ]
+    )
   end
 end
