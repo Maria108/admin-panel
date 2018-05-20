@@ -1,19 +1,14 @@
 <h1>Listing cohorts</h1>
  
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Start date</th>
-    <th>End date</th>
-    <th></th>
-  </tr>
- 
+<ul>
   <% @cohorts.each do |cohort| %>
-    <tr>
-      <td><%= cohort.name %></td>
-      <td><%= cohort.start_date %></td>
-      <td><%= cohort.end_date %></td>
-      <td><%= link_to 'Show', cohort_path(cohort) %></td>
-    </tr>
+      <li><%= cohort.name %></li>
+      <li><%= cohort.start_date %></li>
+      <li><%= cohort.end_date %></li>
+      <li><%= link_to 'Show', cohort_path(cohort) %></li>
+      <% if is_admin_user %>
+        <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
+        <td><%= link_to 'Delete', cohort_path(cohort), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
   <% end %>
-</table>
+</ul>
