@@ -5,7 +5,9 @@
       <li><%= admin.first_name %></li>
       <li><%= admin.last_name %></li>
       <li><%= link_to 'Show', admin_path(admin) %></li>
-      <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-      <td><%= link_to 'Delete', admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% if is_admin_user %>
+        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+        <td><%= link_to 'Delete', admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
   <% end %>
 </ul>

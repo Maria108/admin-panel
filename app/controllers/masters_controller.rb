@@ -1,4 +1,5 @@
 class MastersController < ApplicationController
+  before_action :is_admin_user, only: [:edit, :new, :create, :update, :destroy]
   before_action :set_master, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -29,7 +30,7 @@ class MastersController < ApplicationController
   end
 
   def show
-    @master = Master.find(params[:id])
+    @master
   end
 
   private
@@ -50,4 +51,13 @@ class MastersController < ApplicationController
       ]
     )
   end
+
+  def is_admin_user
+    if current_user.userable_type != "Admin"
+      flash[:notice] = 'Only admins can do it!'
+      redirect_to(:action => 'index')
+      return false
+    end
+  end
+
 end
