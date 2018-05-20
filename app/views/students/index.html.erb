@@ -7,7 +7,9 @@
       <li><%= student.age %></li>
       <li><%= student.education %></li>
       <li><%= link_to 'Show', student_path(student) %></li>
-      <td><%= link_to 'Edit', edit_student_path(student) %></td>
-      <td><%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% if is_admin_user %>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Delete', student_path(student), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
   <% end %>
 </ul>
