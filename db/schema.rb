@@ -24,14 +24,13 @@ ActiveRecord::Schema.define(version: 2018_05_19_150623) do
     t.date "start_date"
     t.date "end_date"
     t.integer "course_id"
+    t.integer "master_id"
+    t.integer "students_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_cohorts_on_course_id"
-  end
-
-  create_table "cohorts_masters", id: false, force: :cascade do |t|
-    t.integer "master_id", null: false
-    t.integer "cohort_id", null: false
+    t.index ["master_id"], name: "index_cohorts_on_master_id"
+    t.index ["students_id"], name: "index_cohorts_on_students_id"
   end
 
   create_table "cohorts_students", id: false, force: :cascade do |t|
@@ -61,8 +60,10 @@ ActiveRecord::Schema.define(version: 2018_05_19_150623) do
     t.string "last_name"
     t.integer "age"
     t.string "education"
+    t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_students_on_cohort_id"
   end
 
   create_table "users", force: :cascade do |t|

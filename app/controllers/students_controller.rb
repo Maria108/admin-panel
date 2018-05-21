@@ -44,6 +44,7 @@ class StudentsController < ApplicationController
       :last_name,
       :age,
       :education,
+      :cohort_id,
       :user_attributes => [
         :email,
         :password
