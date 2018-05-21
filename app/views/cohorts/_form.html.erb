@@ -2,6 +2,6 @@
   <%= form.text_field :name %>
   <%= form.date_field :start_date %>
   <%= form.date_field :end_date %>
-    <%= form.select(:course_id, options_from_collection_for_select(Course.all, :id, :name)) %>
+  <%= form.select(:course_id, options_from_collection_for_select(Course.all, :id, :name)) %>
   <%= form.submit %>
 <% end %>

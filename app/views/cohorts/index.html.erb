@@ -1,14 +1,32 @@
 <h1>Listing cohorts</h1>
  
-<ul>
-  <% @cohorts.each do |cohort| %>
-      <li><%= cohort.name %></li>
-      <li><%= cohort.start_date %></li>
-      <li><%= cohort.end_date %></li>
-      <li><%= link_to 'Show', cohort_path(cohort) %></li>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Start date</th>
+      <th scope="col">End date</th>
+      <th scope="col">Course</th>
+      <th scope="col">Master</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cohorts.each do |cohort| %>
+    <tr>
+      <th scope="row"><%= cohort.id %></th>
+      
+      <td><%= cohort.name %></td>
+      <td><%= cohort.start_date %></td>
+      <td><%= cohort.end_date %></td>
+      <td><%= cohort.course.name %></td>
+      <td><%= cohort.name %></td>
+      <td><%= link_to 'Show', cohort_path(cohort) %></td>
       <% if is_admin_user %>
         <td><%= link_to 'Edit', edit_cohort_path(cohort) %></td>
         <td><%= link_to 'Delete', cohort_path(cohort), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
-  <% end %>
-</ul>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

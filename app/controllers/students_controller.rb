@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  before_action :is_admin_user, only: [:edit, :new, :create, :update, :destroy]  
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -48,5 +49,13 @@ class StudentsController < ApplicationController
         :password
       ]
     )
+  end
+
+  def is_admin_user
+    if current_user.userable_type != "Admin"
+      flash[:notice] = 'Only admins can do it!'
+      redirect_to(:action => 'index')
+      return false
+    end
   end
 end

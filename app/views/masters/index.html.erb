@@ -1,16 +1,36 @@
 <h1>Listing masters</h1>
- 
-<ul>
-  <% @masters.each do |master| %>
-      <li><%= master.first_name %></li>
-      <li><%= master.last_name %></li>
-      <li><%= master.age %></li>
-      <li><%= master.salary %></li>
-      <li><%= master.education %></li>
-      <li><%= link_to 'Show', master_path(master) %></li>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Education</th>
+      <% if is_admin_user %>
+        <th scope="col">Salary</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @masters.each do |master| %>
+    <tr>
+      <th scope="row"><%= master.id %></th>
+      
+      <td><%= master.first_name %></td>
+      <td><%= master.last_name %></td>
+      <td><%= master.age %></td>
+      <td><%= master.education %></td>
+      <% if is_admin_user %>
+        <td><%= master.salary %></td>
+      <% end %>
+      <td><%= link_to 'Show', master_path(master) %></td>
       <% if is_admin_user %>
         <td><%= link_to 'Edit', edit_master_path(master) %></td>
         <td><%= link_to 'Delete', master_path(master), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
-  <% end %>
-</ul>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
