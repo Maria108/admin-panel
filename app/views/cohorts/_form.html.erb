@@ -3,5 +3,6 @@
   <%= form.date_field :start_date %>
   <%= form.date_field :end_date %>
   <%= form.select(:course_id, options_from_collection_for_select(Course.all, :id, :name)) %>
+  <%= form.select(:master_id, options_from_collection_for_select(Master.all, :id, :full_name)) %>
   <%= form.submit %>
 <% end %>
