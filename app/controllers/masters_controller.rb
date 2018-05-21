@@ -19,6 +19,7 @@ class MastersController < ApplicationController
 
   def update
     @master.update(master_params)
+    redirect_to @master
   end
 
   def edit

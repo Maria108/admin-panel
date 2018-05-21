@@ -33,11 +33,6 @@ ActiveRecord::Schema.define(version: 2018_05_19_150623) do
     t.index ["students_id"], name: "index_cohorts_on_students_id"
   end
 
-  create_table "cohorts_students", id: false, force: :cascade do |t|
-    t.integer "student_id", null: false
-    t.integer "cohort_id", null: false
-  end
-
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.integer "hours"

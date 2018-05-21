@@ -19,6 +19,7 @@ class StudentsController < ApplicationController
 
   def update
     @student.update(student_params)
+    redirect_to @student
   end
 
   def edit

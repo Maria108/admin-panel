@@ -7,17 +7,18 @@ class CoursesController < ApplicationController
   end
 
   def new
-    @course = Course.new    
+    @course = Course.new
   end
 
   def create
     @course = Course.new(course_params)
     @course.save!
-    redirect_to @course    
+    redirect_to @course
   end
 
   def update
-    @course.update(course_params)    
+    @course.update(course_params)
+    redirect_to @course
   end
 
   def edit

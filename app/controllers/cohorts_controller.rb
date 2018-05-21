@@ -18,6 +18,7 @@ class CohortsController < ApplicationController
 
   def update
     @cohort.update(cohort_params)
+    redirect_to @cohort
   end
 
   def edit
