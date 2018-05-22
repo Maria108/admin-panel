@@ -1,6 +1,7 @@
 class CohortsController < ApplicationController
   before_action :is_admin_user, only: [:edit, :new, :create, :update, :destroy]
   before_action :set_cohort, only: [:show, :edit, :update, :destroy]
+  before_action :set_students, only: [:show]
   
   def index
     @cohorts = Cohort.all
@@ -36,6 +37,10 @@ class CohortsController < ApplicationController
   private
   def set_cohort
     @cohort = Cohort.find(params[:id])
+  end
+
+  def set_students
+    @students = Student.where(cohort_id: params[:id]).all
   end
 
   def cohort_params

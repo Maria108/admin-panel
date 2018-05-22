@@ -7,3 +7,10 @@
   <strong>Start date</strong>
   <%= @cohort.start_date %>
 </p>
+
+
+<ul>
+<% @students.each do |student| %>
+  <li><%= student.full_name %></li>
+<%end %>
+ </ul>
