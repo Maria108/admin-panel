@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2018_05_19_150623) do
     t.string "first_name"
     t.string "last_name"
     t.integer "age"
+    t.string "picture"
+    t.string "abilities"
     t.integer "salary"
     t.string "education"
     t.datetime "created_at", null: false
@@ -53,6 +55,9 @@ ActiveRecord::Schema.define(version: 2018_05_19_150623) do
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "nickname"
+    t.string "abilities"
+    t.string "picture"
     t.integer "age"
     t.string "education"
     t.integer "cohort_id"

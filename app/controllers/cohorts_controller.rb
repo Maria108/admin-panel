@@ -28,6 +28,7 @@ class CohortsController < ApplicationController
 
   def destroy
     @cohort.destroy
+    redirect_to @cohort
   end
 
   def show

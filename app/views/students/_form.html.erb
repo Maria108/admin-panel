@@ -1,6 +1,9 @@
 <%= bootstrap_form_for @student do |form| %>
+  <%= form.text_field :picture %>
   <%= form.text_field :first_name %>
   <%= form.text_field :last_name %>
+  <%= form.text_field :nickname %>
+  <%= form.text_field :abilities %>  
   <%= form.number_field :age %>
   <%= form.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
   <%= form.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name, @student.cohort_id)) %>

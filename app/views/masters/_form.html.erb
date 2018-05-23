@@ -1,7 +1,9 @@
 <%= bootstrap_form_for @master do |form| %>
+  <%= form.text_field :picture %>
   <%= form.text_field :first_name %>
   <%= form.text_field :last_name %>
   <%= form.number_field :age %>
+  <%= form.text_field :abilities %>
   <%= form.number_field :salary %>
   <%= form.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
   <%= form.fields_for :user do |u| %>

@@ -28,6 +28,7 @@ class MastersController < ApplicationController
 
   def destroy
     @master.destroy
+    redirect_to @master
   end
 
   def show

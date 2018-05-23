@@ -28,6 +28,7 @@ class StudentsController < ApplicationController
 
   def destroy
     @student.destroy
+    redirect_to @student
   end
 
   def show
