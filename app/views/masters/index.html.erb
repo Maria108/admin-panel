@@ -1,4 +1,4 @@
-<h1>Listing masters</h1>
+<h1>Our masters:</h1>
 
 <table class="table table-hover table-dark">
   <thead>
@@ -34,3 +34,9 @@
     <% end %>
   </tbody>
 </table>
+
+<p>
+<% if is_admin_user %>
+  <%= link_to 'Add master', new_master_path(@master) %>
+<% end %>
+</p>

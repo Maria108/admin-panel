@@ -18,6 +18,13 @@
   <%= @cohort.master.full_name %>
 </p>
 
+<p>
+<% if is_admin_user %>
+  <%= link_to 'Edit', edit_cohort_path(@cohort) %>
+  <%= link_to 'Delete', cohort_path(@cohort), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</p>
+
 <table class="table table-hover table-dark">
   <thead>
     <tr>

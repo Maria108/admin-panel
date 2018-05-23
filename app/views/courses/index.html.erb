@@ -7,8 +7,10 @@
         <img class="card-img-top" src="/assets/ninja-l.jpg" alt="Card image cap">
       <% elsif course.name == "Universe wise"%>
         <img class="card-img-top" src="/assets/star.webp" alt="Card image cap">
-      <% else %>
+      <% elsif course.name == "Software Engineering"%>
         <img class="card-img-top" src="/assets/matrix.jpg" alt="Card image cap">
+      <% else %>
+        <img class="card-img-top" src="/assets/new.png" alt="Card image cap">
       <% end %>
       <div class="card-body">
         <h3 class="card-title"><%= course.name %></h3>
@@ -25,3 +27,9 @@
     </div>
   <% end %>
 </div>
+
+<p>
+<% if is_admin_user %>
+  <%= link_to 'Add course', new_course_path(@course) %>
+<% end %>
+</p>

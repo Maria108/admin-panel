@@ -26,3 +26,10 @@
   <strong>Abilities:</strong>
   <%= @student.abilities %>
 </p>
+
+<p>
+<% if is_admin_user %>
+  <%= link_to 'Edit', edit_student_path(@student) %>
+  <%= link_to 'Delete', student_path(@student), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</p>

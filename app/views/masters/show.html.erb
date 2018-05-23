@@ -40,3 +40,10 @@
   <strong>Abilities:</strong>
   <%= @master.abilities %>
 </p>
+
+<p>
+<% if is_admin_user %>
+  <%= link_to 'Edit', edit_master_path(@master) %>
+  <%= link_to 'Delete', master_path(@master), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</p>
