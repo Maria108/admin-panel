@@ -15,7 +15,7 @@
 
 <p>
   <strong>Master:</strong>
-  <%= @cohort.master.full_name %>
+  <%= link_to @cohort.master.full_name, master_path(@cohort.master) %>
 </p>
 
 <p>
@@ -25,6 +25,7 @@
 <% end %>
 </p>
 
+<h3>Cohort Students:</h3>
 <table class="table table-hover table-dark">
   <thead>
     <tr>

@@ -17,10 +17,13 @@
   <%= @master.age %>
 </p>
 
+<% if is_admin_user %>
 <p>
   <strong>Salary $:</strong>
   <%= @master.salary %>
 </p>
+<% end %>
+
 
 <p>
   <strong>Education:</strong>
@@ -31,7 +34,7 @@
   <strong>Cohorts:</strong>
   <ul>
   <% @master.cohorts.each do |cohort| %>
-    <li><%= cohort.name %></li>
+   <li><%= link_to cohort.name, cohort_path(cohort.id) %></li>
   <% end %>
   </ul>
 </p>

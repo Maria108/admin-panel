@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Marvel" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -12,14 +13,19 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <div class="container">
+    <main class="container">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
-    </div>
-    <footer class="footer footer-dark bg-dark">
+    </main>
+    <footer class="footer footer-dark bg-dark sticky-bottom">
       <div class="container">
-        <span class="text-muted">Footer</span>
+        <div class="social-info">
+            <a href="https://www.instagram.com/108masha/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/108masha/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.instagram.com/108masha/" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/108masha/" target="_blank"><i class="fas fa-map-marker-alt"></i></a>
+        </div>
       </div>
     </footer>
   </body>

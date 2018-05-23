@@ -23,6 +23,11 @@
 </p>
 
 <p>
+  <strong>Current cohort:</strong>
+  <%= @student[:cohort_id] ? Cohort.find(@student[:cohort_id]).try(:name) : '' %>
+</p>
+
+<p>
   <strong>Abilities:</strong>
   <%= @student.abilities %>
 </p>
