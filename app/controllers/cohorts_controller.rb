@@ -42,6 +42,7 @@ class CohortsController < ApplicationController
 
   def set_students
     @students = Student.where(cohort_id: params[:id]).all
+    @students_unassigned = Student.where(cohort_id: nil).all
   end
 
   def cohort_params

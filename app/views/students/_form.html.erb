@@ -6,7 +6,7 @@
   <%= form.text_field :abilities %>  
   <%= form.number_field :age %>
   <%= form.select :education, ['HS', 'College', 'Masters', 'PhD'] %>
-  <%= form.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name, @student.cohort_id)) %>
+  <%= form.select(:cohort_id, options_from_collection_for_select(Cohort.all, :id, :name, @student.cohort_id), { include_blank: true }) %>
   <%= form.fields_for :user do |u| %>
     <%= u.email_field :email, placeholder: "Enter Email", label: "Email address", help: "We'll never share your email with anyone else" %>
     <%= u.password_field :password, placeholder: "Password" %>

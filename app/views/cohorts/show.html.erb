@@ -54,3 +54,36 @@
     <% end %>
   </tbody>
 </table>
+
+<% if is_admin_user %>
+<h3>Unassigned students:</h3>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Picture</th>
+      <th scope="col">Nickname</th>
+      <th scope="col">Age</th>
+      <th scope="col">Education</th>
+      <th scope="col">Cohort</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @students_unassigned.each do |student_unassigned| %>
+    <tr>
+      <td><img class="profile-pic" src="<%= student_unassigned.picture %>"/></td>
+      <td><%= student_unassigned.nickname %></td>
+      <td><%= student_unassigned.age %></td>
+      <td><%= student_unassigned.education %></td>
+      <td><%= student_unassigned[:cohort_id] ? Cohort.find(student_unassigned[:cohort_id]).try(:name) : '' %></td>
+      <td><%= link_to 'Show', student_path(student_unassigned) %>
+      <% if is_admin_user %>
+        <%= link_to 'Edit', edit_student_path(student_unassigned) %>
+        <%= link_to 'Delete', student_path(student_unassigned), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
