@@ -1,39 +1,42 @@
 <p>
-  <strong>Picture</strong>
   <img src="<%= @master.picture %>"/>
 </p>
 
 <p>
-  <strong>First name</strong>
+  <strong>First name:</strong>
   <%= @master.first_name %>
 </p>
 
 <p>
-  <strong>Last name</strong>
+  <strong>Last name:</strong>
   <%= @master.last_name %>
 </p>
 
 <p>
-  <strong>Age</strong>
+  <strong>Age:</strong>
   <%= @master.age %>
 </p>
 
 <p>
-  <strong>Salary $</strong>
+  <strong>Salary $:</strong>
   <%= @master.salary %>
 </p>
 
 <p>
-  <strong>Education</strong>
+  <strong>Education:</strong>
   <%= @master.education %>
 </p>
 
 <p>
-  <strong>Cohort</strong>
-  <%= @master.education %>
+  <strong>Cohorts:</strong>
+  <ul>
+  <% @master.cohorts.each do |cohort| %>
+    <li><%= cohort.name %></li>
+  <% end %>
+  </ul>
 </p>
 
 <p>
-  <strong>Abilities</strong>
+  <strong>Abilities:</strong>
   <%= @master.abilities %>
 </p>

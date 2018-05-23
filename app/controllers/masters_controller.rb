@@ -42,6 +42,8 @@ class MastersController < ApplicationController
 
   def master_params
     params.require(:master).permit(
+      :picture,
+      :abilities,
       :first_name,
       :last_name,
       :age,
