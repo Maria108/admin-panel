@@ -1,28 +1,27 @@
-<h1>Listing courses</h1>
+<h1>Courses offered by school:</h1>
  
-<table class="table table-hover table-dark">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Hours</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @courses.each do |course| %>
-    <tr>
-      <th scope="row"><%= course.id %></th>
-      
-      <td><%= course.name %></td>
-      <td><%= course.hours %></td>
-      <td><%= link_to 'Show', course_path(course) %>
-      <% if is_admin_user %>
-        <%= link_to 'Edit', edit_course_path(course) %>
-        <%= link_to 'Delete', course_path(course), method: :delete, data: { confirm: 'Are you sure?' } %>
+ <div class="card-deck mb-4">
+  <% @courses.each do |course| %>
+  <div class="card w-100">
+      <% if course.name == "Martial Arts"%>
+        <img class="card-img-top" src="/assets/ninja-l.jpg" alt="Card image cap">
+      <% elsif course.name == "Universe wise"%>
+        <img class="card-img-top" src="/assets/star.webp" alt="Card image cap">
+      <% else %>
+        <img class="card-img-top" src="/assets/matrix.jpg" alt="Card image cap">
       <% end %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="card-body">
+        <h5 class="card-title"><%= course.name %></h5>
+        <ul>
+        <li><%= course.hours %> hours</li>
+        <li>
+        <%= link_to 'Show', course_path(course) %>
+        <% if is_admin_user %>
+          <%= link_to 'Edit', edit_course_path(course) %>
+          <%= link_to 'Delete', course_path(course), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </li>
+      </div>
+    </div>
+  <% end %>
+</div>

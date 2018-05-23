@@ -1,10 +1,20 @@
 <p>
-  <strong>Name:</strong>
-  <%= @course.name %>
+  <% if @course.name == "Martial Arts"%>
+        <img class="show-pic" src="/assets/ninja-l.jpg" alt="Card image cap">
+      <% elsif @course.name == "Universe wise"%>
+        <img class="show-pic" src="/assets/star.webp" alt="Card image cap">
+      <% else %>
+        <img class="show-pic" src="/assets/matrix.jpg" alt="Card image cap">
+  <% end %>
 </p>
+
+<h3>
+  <strong>Name of the course:</strong>
+  <%= @course.name %>
+</h3>
  
 <p>
-  <strong>Hours</strong>
+  <strong>Hours: </strong>
   <%= @course.hours %>
 </p>
 
