@@ -32,6 +32,7 @@ class CoursesController < ApplicationController
 
   def show
     @course
+    @cohorts = Cohort.where(course_id: @course.id)
   end
 
   private

@@ -3,4 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
     background-color: rgba(0, 0, 0, 0.384);
+    font-family: 'Marvel', sans-serif;
+    font-size: 180%;
+}
+
+.nav-link:hover {
+    color: black;
 }

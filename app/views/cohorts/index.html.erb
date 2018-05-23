@@ -3,7 +3,6 @@
 <table class="table table-hover table-dark">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Start date</th>
       <th scope="col">End date</th>
@@ -15,7 +14,6 @@
   <tbody>
     <% @cohorts.each do |cohort| %>
     <tr>
-      <td><%= cohort.id %></td>
       <td><%= cohort.name %></td>
       <td><%= cohort.start_date %></td>
       <td><%= cohort.end_date %></td>
