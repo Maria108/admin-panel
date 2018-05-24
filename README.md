@@ -1,27 +1,17 @@
-# README
+Pamela’s Panel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The fifth individual project during Web-Development Fellowship at New York Code and Design Academy.
 
-Things you may want to cover:
+It is a fullstack simple admin panel for a fictitious school whereby the administrator can create users and complete common administrative tasks.
 
-* Ruby version
+The key features of this projetc are:
 
-* System dependencies
+Built with Ruby on Rails;
+Activerecord is used to make all database transactions;
+Bootstrap is used for page styling (card, tabs, floating buttons);
+User authentification implemented with devise gem;
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project deployed to Heroku
 
 
 1. rails generate controller NAMEs index new create update edit destroy show
@@ -31,4 +21,4 @@ Things you may want to cover:
 5. // relationsip in models
 6. // methods in controllers
 7. // how methods looks in views
-8. 
+

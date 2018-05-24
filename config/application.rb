@@ -17,3 +17,9 @@ module MarvelLyceum
     # the framework and any gems in your application.
   end
 end
+
+Raven.configure do |config|
+  config.dsn = 'https://dbdb66367936406ab6accf0c06097467:ba1d402342b14ed49b66627b6870d2f0@sentry.io/1213120'
+end
+
+config.filter_parameters << :password
