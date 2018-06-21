@@ -1,4 +1,6 @@
-Pamela’s Panel
+Admin Panel
+
+![Admin panel for Marvel school](https://user-images.githubusercontent.com/32076687/41737566-aa0e981a-755d-11e8-928d-035ca1aa187d.jpg)
 
 The fifth individual project during Web-Development Fellowship at New York Code and Design Academy.
 
